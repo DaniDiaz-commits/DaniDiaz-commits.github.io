@@ -6,18 +6,14 @@ var typed = new Typed(".typing", {
     loop: true
 });
 
+const download = document.querySelector("#download");
 download.addEventListener("click", (event) => {
     event.preventDefault();
 
-    const userChoice = confirm("¿Quieres descargar el CV en inglés? (Aceptar = Español, Cancelar = Inglés)");
+    // const userChoice = confirm("¿Quieres descargar el CV en inglés? (Aceptar = Español, Cancelar = Inglés)");
+    const userChoice = prompt("¿Quieres descargar el CV en inglés? (es = Español, en = Inglés)").trim().toLowerCase();
     
-    if (userChoice) { window.location.href = "files/Curriculum en español.pdf"; } 
-    else {
-        const confirmCancel = confirm("¿Estás seguro de descargar el CV en inglés?");
-        if (confirmCancel) {
-            window.location.href = "files/Curriculum en inglés.pdf";
-        } else {
-            alert("Descarga cancelada.");
-        }
-    }
+    if(userChoice === "es") window.location.href = "files/Curriculum en español.pdf";
+    else if (userChoice === "en")  window.location.href = "files/Curriculum en inglés.pdf";
+    else alert("Descarga cancelada.");
 });
