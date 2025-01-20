@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SQL Comands</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <header><h1>SQL</h1></header>
+    <main>
+
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <div class="front-title">
+                        <h3>Create mi_base_datos</h3>
+                    </div>
+                    <div class="front-content">
+                        <img src="sql.png" alt="">
+                    </div>
+                    <!-- <div class="footer">
+                        <button></button>
+                    </div> -->
+                </div>
+                <div class="back">
+                    <div class="back-title">
+                        <h3>Info</h3>
+                    </div>
+                    <div class="back-content">
+                        <h5>CREATE DATABASE mi_base_datos;</h5>
+                        <p>Este comando crea una nueva base de datos llamada mi_base_datos. Es útil para organizar la información de tu aplicación o sistema. <br>Despues de crear la BD usar el comando USE mi_base_datos para poder usarla </p>                        
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+        <div class="card-container">
+            <div class="card">
+                <div class="front">
+                    <div class="front-title">
+                        <h3>Create TABLE nombre</h3>
+                    </div>
+                    <div class="front-content">
+                        <img src="sql.png" alt="">
+                    </div>
+                    <!-- <div class="footer">
+                        <button></button>
+                    </div> -->
+                </div>
+                <div class="back">
+                    <div class="back-title">
+                        <h3>Info</h3>
+                    </div>
+                    <div class="back-content">
+                        <h5>CREATE TABLE nombre</h5>
+                        <p>Necesitas poner parámetros</p>                        
+                        <p>CREATE TABLE usuarios ( <br>
+                            id INT AUTO_INCREMENT PRIMARY KEY,<br>
+                            nombre VARCHAR(50) NOT NULL,<br>
+                            correo VARCHAR(100) UNIQUE,<br>
+                            fecha_registro DATE
+                        );
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>  
+
+    </main>
+</body>
+</html>
