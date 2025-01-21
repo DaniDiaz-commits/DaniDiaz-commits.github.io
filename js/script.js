@@ -26,4 +26,7 @@ proyects.addEventListener("click", (e) => {
     if(e.target.id == "weed"){
         window.location.href = "proyects/weed/index.html";
     }
+    if(e.target.id == "ip"){
+        window.location.href = "proyects/ip/index.html";
+    }
 })
