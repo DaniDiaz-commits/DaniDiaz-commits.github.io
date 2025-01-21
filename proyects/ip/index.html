@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/@picocss/pico@2/css/pico.min.css"
+    />
+    <title>Ip checker</title>
+  </head>
+  <body>
+    <main class="container">
+      <form id="form">
+        <label>Ip del usuario
+            <input type="text" id="input" placeholder="Introduce aquí una ip" required/>
+            <small>Por ejemplo: 54.85.132.205</small>
+        </label>
+        <button id="submit">Buscar información de la ip</button> <!-- El ultimo boton de un formulario se comporta como submit -->
+      </form>
+      <div>
+        <pre id="results">
+
+        </pre>
+      </div>
+    </main>
+
+    <script src="index.js"></script>
+  </body>
+</html>
