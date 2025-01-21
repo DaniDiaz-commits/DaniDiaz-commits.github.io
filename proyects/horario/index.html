@@ -1,0 +1,487 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Horario</title>
+    <!-- <link rel="stylesheet" href="style.css"> -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            background-color: #000000;
+        }
+
+        /* Table styles */
+        table {
+            border: 2px solid black;
+            width: 90%;
+            border-collapse: collapse;
+            background-color: #ffffff;
+        }
+
+        caption {
+            font-size: 2.5em;
+            margin: 10px 0;
+            color: #ffffff;
+            user-select: none;
+        }
+
+        th,
+        td {
+            padding: 15px;
+            text-align: center;
+            border: 1px solid #ddd;
+
+            user-select: none;
+        }
+
+        .hora {
+            color: #000000;
+            font-weight: bold;
+            text-transform: uppercase;
+            background-color: #ffffff;
+        }
+
+        .highlight {
+            background-color: #47d912;
+            color: #000;
+            font-weight: bold;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.6);
+            transition: background-color 3s ease;
+        }
+
+        .clase_highlight {
+            background-color: #ffeb3b;
+            color: #000;
+            font-weight: bold;
+            animation: palpitar 1.5s ease-in-out infinite, escala 1.5s ease-in-out infinite;
+        }
+
+        @keyframes palpitar {
+            0% {
+                background-color: rgba(255, 0, 0, 0.4);
+                /* Rojo con opacidad baja */
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+                /* Sombra suave */
+            }
+
+            50% {
+                background-color: rgba(255, 0, 0, 1);
+                /* Rojo completamente opaco */
+                box-shadow: 0 0 20px rgba(255, 0, 0, 1);
+                /* Sombra más grande y opaca */
+            }
+
+            100% {
+                background-color: rgba(255, 0, 0, 0.4);
+                /* Regresa a opacidad baja */
+                box-shadow: 0 0 10px rgba(255, 0, 0, 0.4);
+                /* Vuelve a sombra suave */
+            }
+        }
+
+        @keyframes escala {
+            0% {
+                transform: scale(1);
+            }
+
+            50% {
+                transform: scale(1.1);
+                /* Aumenta ligeramente el tamaño */
+            }
+
+            100% {
+                transform: scale(1);
+            }
+        }
+
+        .DWEC {
+            user-select: none;
+            background-color: rgb(80, 83, 212);
+            font-weight: bold;
+        }
+
+        .DWES {
+            user-select: none;
+            background-color: antiquewhite;
+            font-weight: bold;
+        }
+
+        .DAW {
+            user-select: none;
+            background-color: #867b19;
+            font-weight: bold;
+        }
+
+        .DIW {
+            user-select: none;
+            background-color: #d6d6d6;
+            font-weight: bold;
+        }
+
+        .EIE {
+            user-select: none;
+            background-color: rgb(208, 111, 15);
+            font-weight: bold;
+        }
+
+        .RECREO {
+            user-select: none;
+            background-color: #ffeb3b;
+            font-weight: bold;
+        }
+
+        .circle-btn {
+            position: fixed;
+            top: 10px;
+            right: 10px;
+            width: 30px;
+            /* Tamaño del círculo */
+            height: 30px;
+            /* Tamaño del círculo */
+            border-radius: 50%;
+            background-color: #ffffff;
+            cursor: pointer;
+            border: none;
+            outline: none;
+        }
+
+        .circle-btn::before {
+            content: var(--before-content, '🌞');
+            font-size: 24px;
+            color: #ffffff;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            height: 100%;
+            width: 100%;
+            line-height: 50px;
+        }
+
+        p {
+            color: #fff;
+            font-size: 6rem;
+        }
+
+        #time-display {
+            position: absolute;
+            left: 20px;
+            top: 20px;
+            margin-bottom: 20px;
+            font-size: 2.5rem;
+            color: #fff; /* Blanco puro para buen contraste */
+            background: linear-gradient(90deg, #1e90ff, #00bcd4); /* Gradiente moderno */
+            padding: 15px 30px; /* Más espacio para que luzca más espacioso */
+            border-radius: 12px; /* Bordes redondeados más suaves */
+            box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2); /* Sombra más pronunciada y moderna */
+            font-weight: bold; /* Para destacar el texto */
+            letter-spacing: 1px; /* Espaciado sutil entre letras */
+            text-shadow: 1px 1px 2px rgba(0, 0, 0, 0.5); /* Sombra en el texto para mayor profundidad */
+            border: 2px solid rgba(255, 255, 255, 0.2); /* Añade un borde sutil */
+        }
+
+        /* @media (width: 1200px) {td, th {height: 30px; }} */
+    </style>
+</head>
+<body>
+
+    <button class="circle-btn"></button>
+    <div id="time-display">
+        <output id="hora"></output>
+      </div>
+    <table>
+        <caption>2º-DAW Horario</caption>
+        <tr>
+            <th class="vacio"></th>
+            <th class="dia">Lunes</th>
+            <th class="dia">Martes</th>
+            <th class="dia">Miércoles</th>
+            <th class="dia">Jueves</th>
+            <th class="dia">Viernes</th>
+        </tr>
+        <tr>
+            <th id="primera" class="hora">08:30 - 09:20</th>
+            <td title="Ana Rosa"     class="DWEC">DWEC</th>
+            <td title="David Sancho" class="DIW">DIW</th>
+            <td title="Ana Rosa"     class="DWEC">DWEC</th>
+            <td title="David Sancho" class="DIW">DIW</td>
+            <td title="Ana Rosa"     class="DWEC">DWEC</td>
+        </tr>
+        <tr>
+            <th id="segunda" class="hora">09:25 - 10:15</th>
+            <td title="Ana Rosa"     class="DWEC">DWEC</td>
+            <td title="David Sancho" class="DIW">DIW</td>
+            <td title="Ana Rosa"     class="DWEC">DWEC</td>
+            <td title="David Sancho" class="DIW">DIW</th>
+            <td title="Ana Rosa"     class="DWEC">DWEC</td>
+        </tr>
+        <tr>
+            <th id="tercera" class="hora">10:20 - 11:10</th>
+            <td title="Maria Esther" class="DWES">DWES</td>
+            <td title="Maria Esther" class="DWES">DWES</th>
+            <td title="Lara Manjon"  class="DAW">DAW</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+        </tr>
+        <tr>
+            <th id="recreo" class="hora">11:10 - 11:40</th>
+            <td class="RECREO" colspan="5">RECREO</th>
+        </tr>
+        <tr>
+            <th id="cuarta" class="hora">11:40 - 12:30</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+            <td title="Lara Manjon"  class="DAW">DAW</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+        </tr>
+        <tr>
+            <th id="quinta" class="hora">12:35 - 13:25</th>
+            <td title="Lara Manjon"  class="DAW">DAW</th>
+            <td title="Maria Esther" class="DWES">DWES</th>
+            <td title="David Sancho" class="DIW">DIW</th>
+            <td title="Ana Rosa"     class="DWEC">DWEC</th>
+            <td title="Ana Juliana"  class="EIE">EIE</th>
+        </tr>
+        <tr>
+            <td id="sexta" class="hora">13:30 - 14:20</td>
+            <td title="Lara Manjon"  class="DAW">DAW</th>
+            <td title="Ana Juliana"  class="EIE">EIE</th>
+            <td title="David Sancho" class="DIW">DIW</th>
+            <td title="Ana Rosa"     class="DWEC">DWEC</th>
+            <td title="Ana Juliana"  class="EIE">EIE</th>
+        </tr>
+    </table>
+
+    <!-- <script src="script.js"></script> -->
+    <script>
+        let intervals = [];
+        function getIntervals() {
+            const horaCells = document.querySelectorAll(".hora");
+            intervals = Array.from(horaCells)
+                .map(cell => cell.textContent.trim())
+                .filter(text => text.includes("-"))
+                .map(interval => {
+                    const [start, end] = interval.split(" - ");
+                    return { start, end };
+                });
+        }
+        // const intervals = [
+        //     { start: '08:30', end: '09:20' },
+        //     { start: '09:25', end: '10:15' },
+        //     { start: '10:20', end: '11:10' },
+        //     { start: '11:10', end: '11:40' },
+        //     { start: '11:40', end: '12:30' },
+        //     { start: '12:35', end: '13:25' },
+        //     { start: '13:30', end: '14:20' }
+        // ];
+
+        function outTime() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let timeString = `${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+
+            // IF PARA SI ES FIN DE SEMANA
+            if (now.getDay() == 0 || now.getDay() == 6) {
+                document.querySelector("table").style.display = "none";
+                now.getDay() == 6 ? alert("Es sabado") : alert("Es domingo");
+                return;
+            }
+
+            // SI NO ESTÁ EN HORARIO LECTIVO
+            if (hours <= intervals[0].start && hours >= intervals[6].end) {
+                document.querySelector('table').style.display = "none";
+                // alert("No en horario lectivo");
+                return;
+            }
+
+            let descanso = false;
+            for (let i = 0; i < intervals.length; i++) {
+                if (timeString >= intervals[i].start && timeString < intervals[i].end) {
+                    descanso = true;
+                    break;
+                }
+            }
+
+            if (!descanso) {
+                // alert("Descanso");
+                console.log("Descanso")
+            } else {
+                document.querySelector('table').style.display = "table"; // Aseguramos que la tabla esté visible
+            }
+        }
+
+        function day_highlight() {
+            const now = new Date();
+            const fecha = now.getDay();
+
+            let dias = document.querySelectorAll(".dia");
+            dias.forEach((dia, index) => {
+                if (index === fecha - 1) dia.classList.add("highlight");
+                else dia.classList.remove("highlight");
+            });
+        }
+
+        function hour_highlight() {
+            let hora = whatHour();
+            if (hora == false) return;
+            let tds = document.querySelectorAll(".hora");
+            let celda = tds[hora];
+            if (hora >= 0 && hora <= 6) celda.classList.add("highlight");
+        }
+
+        let clase = [];
+        function class_highlight() {
+            for (let elemento of clase) {
+                elemento.classList.remove("clase_highlight");
+            }
+            clase.length = 0;
+            const dias = [...document.querySelectorAll(".dia")];
+            let dia = dias.findIndex(fecha => fecha.classList.contains("highlight"));
+            const trs = document.querySelectorAll("tr");
+            let hour = whatHour();
+            if (!hour || hour == "break"){
+                // alert("Tomate un descanso");
+                return
+            };
+
+            let tr;
+            if (hour >= 0 || hour <= 6){ 
+                // +1 porque pilla la primera tabla que es la cabecera.
+                tr = trs[hour + 1];
+                // alert(`Estás es ${tr.children[0].id} hora`); 
+                console.log(`Estás en ${tr.children[0].id} hora`);
+            }
+
+            let celda;
+            celda = (hour == 3) ? tr.children[1] : tr.children[dia + 1];
+
+            celda.classList.add("clase_highlight");
+            clase.push(celda);
+        }
+
+        // Para saber en que hora se encuentra.
+        function whatHour() {
+            const now = new Date();
+            let hours = now.getHours();
+            let minutes = now.getMinutes();
+            let timeString = `${hours < 10 ? "0" + hours : hours}:${minutes < 10 ? "0" + minutes : minutes}`;
+
+            for (let i = 0; i < intervals.length; i++) {
+                if (timeString >= intervals[i].start && timeString < intervals[i].end) {
+                    if(timeString >= intervals[i].end && timeString <= intervals[i].start){
+                        return "break";
+                    }
+                    return i;
+                }
+            }
+            // Devuelve false si no esta en hora de clase.
+            return false;
+        }
+
+        // Junto todas las funciones para no hacer demasiadas llamadas al setInterval
+        function update() {
+            day_highlight();
+            hour_highlight();
+            class_highlight();
+            outTime();
+        }
+
+        // Actualiza el tiempo dependiento de cuanto queda para el proximo minuto
+        function timeUpdate() {
+            const now = new Date();
+            const seconds = now.getSeconds();
+            const milliseconds = now.getMilliseconds();
+            const timeToNextMinute = (60 - seconds) * 1000 - milliseconds; // Tiempo hasta el próximo minuto
+
+            // Programar la actualización inicial al inicio del próximo minuto
+            setTimeout(() => {
+                update();
+                setInterval(update, 60000);
+            }, timeToNextMinute);
+        }
+
+        document.addEventListener('DOMContentLoaded', () => {
+            reloj();
+            getIntervals();
+            update();
+            timeUpdate();
+        });
+    </script>
+    <!-- PARA EL BOTON DEL MODO OSCURO -->
+    <script>
+        let oscuro = true;
+        const btn = document.querySelector('.circle-btn');
+        btn.addEventListener('click', e => {
+            let horas = document.querySelectorAll(".hora");
+            let dias = document.querySelectorAll(".dia");
+            let btn = document.querySelector("button");
+            if (oscuro) {
+                document.body.style.backgroundColor = "white";
+                document.querySelector("caption").style.color = "black";
+                document.querySelector("table").style.border = "2px solid black";
+                horas.forEach(hora => {
+                    if (!hora.classList.contains("highlight")) {
+                        hora.style.backgroundColor = "black";
+                        hora.style.color = "white";
+                    }
+                });
+                dias.forEach(dia => {
+                    if (!dia.classList.contains("highlight")) {
+                        dia.style.backgroundColor = "black";
+                        dia.style.color = "white";
+                    }
+                });
+                document.querySelector(".vacio").style.backgroundColor = "black";
+                btn.style.backgroundColor = "black";
+                btn.style.setProperty('--before-content', '"🌙"');
+            } else {
+                document.body.style.backgroundColor = "black";
+                document.querySelector("caption").style.color = "white";
+                document.querySelector("table").style.border = "2px solid white";
+                horas.forEach(hora => {
+                    if (!hora.classList.contains("highlight")) {
+                        hora.style.backgroundColor = "white";
+                        hora.style.color = "black"
+                    }
+                });
+                dias.forEach(dia => {
+                    if (!dia.classList.contains("highlight")) {
+                        dia.style.backgroundColor = "white";
+                        dia.style.color = "black";
+                    }
+                });
+                document.querySelector(".vacio").style.backgroundColor = "white";
+                btn.style.backgroundColor = "white";
+                btn.style.setProperty('--before-content', '"🌞"');
+            }
+            oscuro = !oscuro;
+        });
+    </script>
+    <script src="hora.js"></script>
+    <!-- PARA EL RELOJ -->
+    <!-- <script>
+        function reloj(){
+        let now = new Date();
+        
+        let hours   = now.getHours()   < 10 ? "0"+now.getHours()   : now.getHours();
+        let minutes = now.getMinutes() < 10 ? "0"+now.getMinutes() : now.getMinutes();
+        let seconds = now.getSeconds() < 10 ? "0"+now.getSeconds() : now.getSeconds();
+    
+        let hms = document.getElementById("hora");
+        hms.innerHTML = hours + " : " + minutes + " : " + seconds;
+    }
+    setInterval(reloj, 1000);
+    </script> -->
+</body>
+
+</html>

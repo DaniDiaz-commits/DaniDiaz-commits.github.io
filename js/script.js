@@ -17,3 +17,13 @@ download.addEventListener("click", (event) => {
     else if (userChoice === "en")  window.location.href = "files/Curriculum en inglés.pdf";
     else alert("Descarga cancelada.");
 });
+
+const proyects = document.querySelector("#proyects");
+proyects.addEventListener("click", (e) => {
+    if(e.target.id == "horario"){
+        window.location.href = "proyects/horario/index.html";
+    }
+    if(e.target.id == "weed"){
+        window.location.href = "proyects/weed/index.html";
+    }
+})
