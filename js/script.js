@@ -55,5 +55,6 @@ proyects.addEventListener("click", (e) => {
     if(e.target.id == "horario") { window.location.href = "proyects/horario/index.html"; }
     if(e.target.id == "weed") { window.location.href = "proyects/weed/index.html"; }
     if(e.target.id == "ip") { window.location.href = "proyects/ip/index.html"; }
+    if(e.target.id == "drum") { window.location.href = "proyects/drum-kit/index.html"; }
 })
 
