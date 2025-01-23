@@ -1,0 +1,992 @@
+[
+    {
+        "city": "Madrid",
+        "growth_from_2000_to_2013": "5.2%", 
+        "latitude": 40.416775, 
+        "longitude": -3.703790, 
+        "population": "3223334", 
+        "rank": "1", 
+        "state": "Madrid"
+    },
+    {
+        "city": "Barcelona",
+        "growth_from_2000_to_2013": "3.1%", 
+        "latitude": 41.385064, 
+        "longitude": 2.173404, 
+        "population": "1620343", 
+        "rank": "2", 
+        "state": "Cataluña"
+    },
+    {
+        "city": "Valencia",
+        "growth_from_2000_to_2013": "2.4%", 
+        "latitude": 39.469907, 
+        "longitude": -0.376288, 
+        "population": "794288", 
+        "rank": "3", 
+        "state": "Valencia"
+    },
+    {
+        "city": "Sevilla",
+        "growth_from_2000_to_2013": "1.9%", 
+        "latitude": 37.388630, 
+        "longitude": -5.982323, 
+        "population": "688592", 
+        "rank": "4", 
+        "state": "Andalucía"
+    },
+    {
+        "city": "Zaragoza",
+        "growth_from_2000_to_2013": "4.6%", 
+        "latitude": 41.648823, 
+        "longitude": -0.889085, 
+        "population": "674997", 
+        "rank": "5", 
+        "state": "Aragón"
+    },
+    {
+        "city": "Málaga",
+        "growth_from_2000_to_2013": "5.3%", 
+        "latitude": 36.721302, 
+        "longitude": -4.421636, 
+        "population": "568305", 
+        "rank": "6", 
+        "state": "Andalucía"
+    },
+    {
+        "city": "Murcia",
+        "growth_from_2000_to_2013": "7.1%", 
+        "latitude": 37.992240, 
+        "longitude": -1.130654, 
+        "population": "441003", 
+        "rank": "7", 
+        "state": "Murcia"
+    },
+    {
+        "city": "Palma de Mallorca",
+        "growth_from_2000_to_2013": "3.5%", 
+        "latitude": 39.569600, 
+        "longitude": 2.650160, 
+        "population": "407648", 
+        "rank": "8", 
+        "state": "Islas Baleares"
+    },
+    {
+        "city": "Las Palmas de Gran Canaria",
+        "growth_from_2000_to_2013": "2.8%", 
+        "latitude": 28.123546, 
+        "longitude": -15.436257, 
+        "population": "383343", 
+        "rank": "9", 
+        "state": "Canarias"
+    },
+    {
+        "city": "Bilbao",
+        "growth_from_2000_to_2013": "-0.4%", 
+        "latitude": 43.263012, 
+        "longitude": -2.934985, 
+        "population": "346843", 
+        "rank": "10", 
+        "state": "País Vasco"
+    },
+    {
+        "city": "Alicante",
+        "growth_from_2000_to_2013": "3.7%",
+        "latitude": 38.345996,
+        "longitude": -0.490686,
+        "population": "334887",
+        "rank": "11",
+        "state": "Valencia"
+    },
+    {
+        "city": "Córdoba",
+        "growth_from_2000_to_2013": "1.4%",
+        "latitude": 37.888175,
+        "longitude": -4.779383,
+        "population": "325708",
+        "rank": "12",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Valladolid",
+        "growth_from_2000_to_2013": "0.9%",
+        "latitude": 41.652251,
+        "longitude": -4.724532,
+        "population": "301876",
+        "rank": "13",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Vigo",
+        "growth_from_2000_to_2013": "0.8%",
+        "latitude": 42.240599,
+        "longitude": -8.720727,
+        "population": "295364",
+        "rank": "14",
+        "state": "Galicia"
+    },
+    {
+        "city": "Gijón",
+        "growth_from_2000_to_2013": "0.5%",
+        "latitude": 43.532202,
+        "longitude": -5.661120,
+        "population": "276473",
+        "rank": "15",
+        "state": "Asturias"
+    },
+    {
+        "city": "Hospitalet de Llobregat",
+        "growth_from_2000_to_2013": "2.1%",
+        "latitude": 41.366190,
+        "longitude": 2.116494,
+        "population": "257349",
+        "rank": "16",
+        "state": "Cataluña"
+    },
+    {
+        "city": "A Coruña",
+        "growth_from_2000_to_2013": "1.1%",
+        "latitude": 43.362343,
+        "longitude": -8.411540,
+        "population": "244850",
+        "rank": "17",
+        "state": "Galicia"
+    },
+    {
+        "city": "Vitoria-Gasteiz",
+        "growth_from_2000_to_2013": "4.3%",
+        "latitude": 42.846452,
+        "longitude": -2.671574,
+        "population": "242082",
+        "rank": "18",
+        "state": "País Vasco"
+    },
+    {
+        "city": "Granada",
+        "growth_from_2000_to_2013": "1.7%",
+        "latitude": 37.177336,
+        "longitude": -3.598557,
+        "population": "237540",
+        "rank": "19",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Elche",
+        "growth_from_2000_to_2013": "3.6%",
+        "latitude": 38.269933,
+        "longitude": -0.712560,
+        "population": "228647",
+        "rank": "20",
+        "state": "Valencia"
+    },
+    {
+        "city": "Oviedo",
+        "growth_from_2000_to_2013": "0.4%",
+        "latitude": 43.360290,
+        "longitude": -5.844760,
+        "population": "220301",
+        "rank": "21",
+        "state": "Asturias"
+    },
+    {
+        "city": "Santa Cruz de Tenerife",
+        "growth_from_2000_to_2013": "2.9%",
+        "latitude": 28.463630,
+        "longitude": -16.251847,
+        "population": "203811",
+        "rank": "22",
+        "state": "Canarias"
+    },
+    {
+        "city": "Badalona",
+        "growth_from_2000_to_2013": "1.2%",
+        "latitude": 41.450039,
+        "longitude": 2.247412,
+        "population": "220440",
+        "rank": "23",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Cartagena",
+        "growth_from_2000_to_2013": "2.5%",
+        "latitude": 37.625683,
+        "longitude": -0.996584,
+        "population": "214802",
+        "rank": "24",
+        "state": "Murcia"
+    },
+    {
+        "city": "Terrassa",
+        "growth_from_2000_to_2013": "3.8%",
+        "latitude": 41.563211,
+        "longitude": 2.008874,
+        "population": "215121",
+        "rank": "25",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Jerez de la Frontera",
+        "growth_from_2000_to_2013": "1.9%",
+        "latitude": 36.685006,
+        "longitude": -6.126074,
+        "population": "213105",
+        "rank": "26",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Sabadell",
+        "growth_from_2000_to_2013": "1.7%",
+        "latitude": 41.546274,
+        "longitude": 2.108613,
+        "population": "208246",
+        "rank": "27",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Móstoles",
+        "growth_from_2000_to_2013": "2.3%",
+        "latitude": 40.323213,
+        "longitude": -3.867629,
+        "population": "206589",
+        "rank": "28",
+        "state": "Madrid"
+    },
+    {
+        "city": "Alcalá de Henares",
+        "growth_from_2000_to_2013": "1.6%",
+        "latitude": 40.481979,
+        "longitude": -3.363542,
+        "population": "200768",
+        "rank": "29",
+        "state": "Madrid"
+    },
+    {
+        "city": "Pamplona",
+        "growth_from_2000_to_2013": "1.4%",
+        "latitude": 42.812526,
+        "longitude": -1.645775,
+        "population": "196955",
+        "rank": "30",
+        "state": "Navarra"
+    },
+    {
+        "city": "Fuenlabrada",
+        "growth_from_2000_to_2013": "1.8%",
+        "latitude": 40.290205,
+        "longitude": -3.803548,
+        "population": "194506",
+        "rank": "31",
+        "state": "Madrid"
+    },
+    {
+        "city": "Almería",
+        "growth_from_2000_to_2013": "2.9%",
+        "latitude": 36.834047,
+        "longitude": -2.463714,
+        "population": "193351",
+        "rank": "32",
+        "state": "Andalucía"
+    },
+    {
+        "city": "San Sebastián",
+        "growth_from_2000_to_2013": "0.9%",
+        "latitude": 43.322421,
+        "longitude": -1.983888,
+        "population": "186665",
+        "rank": "33",
+        "state": "País Vasco"
+    },
+    {
+        "city": "Burgos",
+        "growth_from_2000_to_2013": "0.5%",
+        "latitude": 42.343993,
+        "longitude": -3.696906,
+        "population": "175821",
+        "rank": "34",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Santander",
+        "growth_from_2000_to_2013": "0.6%",
+        "latitude": 43.462305,
+        "longitude": -3.809980,
+        "population": "172656",
+        "rank": "35",
+        "state": "Cantabria"
+    },
+    {
+        "city": "Castellón de la Plana",
+        "growth_from_2000_to_2013": "2.4%",
+        "latitude": 39.986356,
+        "longitude": -0.051324,
+        "population": "171728",
+        "rank": "36",
+        "state": "Valencia"
+    },
+    {
+        "city": "Alcorcón",
+        "growth_from_2000_to_2013": "2.2%",
+        "latitude": 40.345826,
+        "longitude": -3.827843,
+        "population": "170514",
+        "rank": "37",
+        "state": "Madrid"
+    },
+    {
+        "city": "Logroño",
+        "growth_from_2000_to_2013": "1.0%",
+        "latitude": 42.462719,
+        "longitude": -2.444985,
+        "population": "152698",
+        "rank": "38",
+        "state": "La Rioja"
+    },
+    {
+        "city": "Badajoz",
+        "growth_from_2000_to_2013": "1.7%",
+        "latitude": 38.878545,
+        "longitude": -6.970653,
+        "population": "150702",
+        "rank": "39",
+        "state": "Extremadura"
+    },
+    {
+        "city": "Salamanca",
+        "growth_from_2000_to_2013": "0.2%",
+        "latitude": 40.970104,
+        "longitude": -5.663539,
+        "population": "144228",
+        "rank": "40",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Huelva",
+        "growth_from_2000_to_2013": "2.0%",
+        "latitude": 37.261421,
+        "longitude": -6.944722,
+        "population": "144258",
+        "rank": "41",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Lleida",
+        "growth_from_2000_to_2013": "1.9%",
+        "latitude": 41.617589,
+        "longitude": 0.620015,
+        "population": "137387",
+        "rank": "42",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Marbella",
+        "growth_from_2000_to_2013": "4.1%",
+        "latitude": 36.510072,
+        "longitude": -4.882447,
+        "population": "137186",
+        "rank": "43",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Tarragona",
+        "growth_from_2000_to_2013": "2.5%",
+        "latitude": 41.118882,
+        "longitude": 1.244491,
+        "population": "132299",
+        "rank": "44",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Parla",
+        "growth_from_2000_to_2013": "3.3%",
+        "latitude": 40.236042,
+        "longitude": -3.767549,
+        "population": "131648",
+        "rank": "45",
+        "state": "Madrid"
+    },
+    {
+        "city": "Girona",
+        "growth_from_2000_to_2013": "2.8%",
+        "latitude": 41.979400,
+        "longitude": 2.821426,
+        "population": "101852",
+        "rank": "46",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Santiago de Compostela",
+        "growth_from_2000_to_2013": "1.5%",
+        "latitude": 42.880421,
+        "longitude": -8.546816,
+        "population": "96,405",
+        "rank": "47",
+        "state": "Galicia"
+    },
+    {
+        "city": "Torrevieja",
+        "growth_from_2000_to_2013": "4.0%",
+        "latitude": 37.978738,
+        "longitude": -0.682239,
+        "population": "89,068",
+        "rank": "48",
+        "state": "Valencia"
+    },
+    {
+        "city": "Coslada",
+        "growth_from_2000_to_2013": "2.7%",
+        "latitude": 40.423939,
+        "longitude": -3.561282,
+        "population": "82,672",
+        "rank": "49",
+        "state": "Madrid"
+    },
+    {
+        "city": "Pontevedra",
+        "growth_from_2000_to_2013": "1.3%",
+        "latitude": 42.428229,
+        "longitude": -8.644549,
+        "population": "82,802",
+        "rank": "50",
+        "state": "Galicia"
+    },
+    {
+        "city": "Rivas-Vaciamadrid",
+        "growth_from_2000_to_2013": "7.5%",
+        "latitude": 40.327216,
+        "longitude": -3.519599,
+        "population": "91,800",
+        "rank": "51",
+        "state": "Madrid"
+    },
+    {
+        "city": "Algeciras",
+        "growth_from_2000_to_2013": "1.9%",
+        "latitude": 36.140759,
+        "longitude": -5.456233,
+        "population": "121,957",
+        "rank": "52",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Estepona",
+        "growth_from_2000_to_2013": "4.4%",
+        "latitude": 36.427063,
+        "longitude": -5.145324,
+        "population": "67,012",
+        "rank": "53",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Ferrol",
+        "growth_from_2000_to_2013": "0.5%",
+        "latitude": 43.483421,
+        "longitude": -8.235889,
+        "population": "66,799",
+        "rank": "54",
+        "state": "Galicia"
+    },
+    {
+        "city": "Arrecife",
+        "growth_from_2000_to_2013": "3.5%",
+        "latitude": 28.963020,
+        "longitude": -13.547711,
+        "population": "64,913",
+        "rank": "55",
+        "state": "Canarias"
+    },
+    {
+        "city": "Ciudad Real",
+        "growth_from_2000_to_2013": "2.1%",
+        "latitude": 38.984144,
+        "longitude": -3.927069,
+        "population": "74,743",
+        "rank": "56",
+        "state": "Castilla-La Mancha"
+    },
+    {
+        "city": "Orihuela",
+        "growth_from_2000_to_2013": "2.8%",
+        "latitude": 38.084780,
+        "longitude": -0.944507,
+        "population": "77,414",
+        "rank": "57",
+        "state": "Valencia"
+    },
+    {
+        "city": "Roquetas de Mar",
+        "growth_from_2000_to_2013": "5.3%",
+        "latitude": 36.764194,
+        "longitude": -2.614745,
+        "population": "95,650",
+        "rank": "58",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Cuenca",
+        "growth_from_2000_to_2013": "0.4%",
+        "latitude": 40.070392,
+        "longitude": -2.137416,
+        "population": "54,921",
+        "rank": "59",
+        "state": "Castilla-La Mancha"
+    },
+    {
+        "city": "Avilés",
+        "growth_from_2000_to_2013": "0.3%",
+        "latitude": 43.556944,
+        "longitude": -5.924722,
+        "population": "78,182",
+        "rank": "60",
+        "state": "Asturias"
+    },
+    {
+        "city": "Manresa",
+        "growth_from_2000_to_2013": "1.1%",
+        "latitude": 41.728514,
+        "longitude": 1.825227,
+        "population": "76,250",
+        "rank": "61",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Talavera de la Reina",
+        "growth_from_2000_to_2013": "2.3%",
+        "latitude": 39.963157,
+        "longitude": -4.830247,
+        "population": "83,663",
+        "rank": "62",
+        "state": "Castilla-La Mancha"
+    },
+    {
+        "city": "Palencia",
+        "growth_from_2000_to_2013": "0.8%",
+        "latitude": 42.009685,
+        "longitude": -4.528320,
+        "population": "78,892",
+        "rank": "63",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Benidorm",
+        "growth_from_2000_to_2013": "3.7%",
+        "latitude": 38.541056,
+        "longitude": -0.123313,
+        "population": "68,721",
+        "rank": "64",
+        "state": "Valencia"
+    },
+    {
+        "city": "Linares",
+        "growth_from_2000_to_2013": "1.5%",
+        "latitude": 38.095239,
+        "longitude": -3.635542,
+        "population": "58,432",
+        "rank": "65",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Mérida",
+        "growth_from_2000_to_2013": "2.6%",
+        "latitude": 38.917030,
+        "longitude": -6.345367,
+        "population": "59,352",
+        "rank": "66",
+        "state": "Extremadura"
+    },
+    {
+        "city": "Alcoy",
+        "growth_from_2000_to_2013": "1.8%",
+        "latitude": 38.705222,
+        "longitude": -0.474126,
+        "population": "59,354",
+        "rank": "67",
+        "state": "Valencia"
+    },
+    {
+        "city": "Ponferrada",
+        "growth_from_2000_to_2013": "1.9%",
+        "latitude": 42.546639,
+        "longitude": -6.596965,
+        "population": "66,656",
+        "rank": "68",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Puerto de la Cruz",
+        "growth_from_2000_to_2013": "3.0%",
+        "latitude": 28.411881,
+        "longitude": -16.548321,
+        "population": "30,134",
+        "rank": "69",
+        "state": "Canarias"
+    },
+    {
+        "city": "Aranjuez",
+        "growth_from_2000_to_2013": "2.7%",
+        "latitude": 40.032617,
+        "longitude": -3.602099,
+        "population": "59,526",
+        "rank": "70",
+        "state": "Madrid"
+    },
+    {
+        "city": "Valdemoro",
+        "growth_from_2000_to_2013": "5.2%",
+        "latitude": 40.190454,
+        "longitude": -3.678809,
+        "population": "75,994",
+        "rank": "71",
+        "state": "Madrid"
+    },
+    {
+        "city": "San Fernando",
+        "growth_from_2000_to_2013": "2.1%",
+        "latitude": 36.457855,
+        "longitude": -6.197562,
+        "population": "96,366",
+        "rank": "72",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Mollet del Vallès",
+        "growth_from_2000_to_2013": "1.5%",
+        "latitude": 41.538386,
+        "longitude": 2.213589,
+        "population": "51,284",
+        "rank": "73",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Motril",
+        "growth_from_2000_to_2013": "3.3%",
+        "latitude": 36.747716,
+        "longitude": -3.517002,
+        "population": "60,368",
+        "rank": "74",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Vilanova i la Geltrú",
+        "growth_from_2000_to_2013": "1.8%",
+        "latitude": 41.222847,
+        "longitude": 1.725069,
+        "population": "66,439",
+        "rank": "75",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Rota",
+        "growth_from_2000_to_2013": "2.9%",
+        "latitude": 36.622213,
+        "longitude": -6.358558,
+        "population": "28,562",
+        "rank": "76",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Utrera",
+        "growth_from_2000_to_2013": "2.2%",
+        "latitude": 37.180747,
+        "longitude": -5.780758,
+        "population": "51,658",
+        "rank": "77",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Ávila",
+        "growth_from_2000_to_2013": "0.4%",
+        "latitude": 40.656682,
+        "longitude": -4.681988,
+        "population": "58,417",
+        "rank": "78",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Collado Villalba",
+        "growth_from_2000_to_2013": "3.0%",
+        "latitude": 40.635067,
+        "longitude": -4.004423,
+        "population": "63,543",
+        "rank": "79",
+        "state": "Madrid"
+    },
+    {
+        "city": "Vélez-Málaga",
+        "growth_from_2000_to_2013": "3.2%",
+        "latitude": 36.772029,
+        "longitude": -4.100398,
+        "population": "82,365",
+        "rank": "80",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Torremolinos",
+        "growth_from_2000_to_2013": "2.7%",
+        "latitude": 36.620348,
+        "longitude": -4.499762,
+        "population": "69,389",
+        "rank": "81",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Elda",
+        "growth_from_2000_to_2013": "1.4%",
+        "latitude": 38.477639,
+        "longitude": -0.796964,
+        "population": "52,618",
+        "rank": "82",
+        "state": "Valencia"
+    },
+    {
+        "city": "Cáceres",
+        "growth_from_2000_to_2013": "1.6%",
+        "latitude": 39.476489,
+        "longitude": -6.372241,
+        "population": "95,800",
+        "rank": "83",
+        "state": "Extremadura"
+    },
+    {
+        "city": "Benalmádena",
+        "growth_from_2000_to_2013": "4.0%",
+        "latitude": 36.600934,
+        "longitude": -4.516442,
+        "population": "68,929",
+        "rank": "84",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Plasencia",
+        "growth_from_2000_to_2013": "1.5%",
+        "latitude": 40.031117,
+        "longitude": -6.088464,
+        "population": "41,047",
+        "rank": "85",
+        "state": "Extremadura"
+    },
+    {
+        "city": "Zamora",
+        "growth_from_2000_to_2013": "0.5%",
+        "latitude": 41.503614,
+        "longitude": -5.744999,
+        "population": "61,295",
+        "rank": "86",
+        "state": "Castilla y León"
+    },
+    {
+        "city": "Torrelavega",
+        "growth_from_2000_to_2013": "1.2%",
+        "latitude": 43.349867,
+        "longitude": -4.047123,
+        "population": "51,129",
+        "rank": "87",
+        "state": "Cantabria"
+    },
+    {
+        "city": "Mijas",
+        "growth_from_2000_to_2013": "4.8%",
+        "latitude": 36.595410,
+        "longitude": -4.637405,
+        "population": "82,742",
+        "rank": "88",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Ceuta",
+        "growth_from_2000_to_2013": "2.9%",
+        "latitude": 35.889387,
+        "longitude": -5.319789,
+        "population": "84,202",
+        "rank": "89",
+        "state": "Ceuta"
+    },
+    {
+        "city": "Melilla",
+        "growth_from_2000_to_2013": "3.0%",
+        "latitude": 35.292278,
+        "longitude": -2.938097,
+        "population": "86,120",
+        "rank": "90",
+        "state": "Melilla"
+    },
+    {
+        "city": "Alcázar de San Juan",
+        "growth_from_2000_to_2013": "1.8%",
+        "latitude": 39.391155,
+        "longitude": -3.206634,
+        "population": "30,518",
+        "rank": "91",
+        "state": "Castilla-La Mancha"
+    },
+    {
+        "city": "Barbate",
+        "growth_from_2000_to_2013": "2.1%",
+        "latitude": 36.193172,
+        "longitude": -5.916223,
+        "population": "22,912",
+        "rank": "92",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Viladecans",
+        "growth_from_2000_to_2013": "3.4%",
+        "latitude": 41.317991,
+        "longitude": 2.014071,
+        "population": "66,707",
+        "rank": "93",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Estepona",
+        "growth_from_2000_to_2013": "3.7%",
+        "latitude": 36.427063,
+        "longitude": -5.145324,
+        "population": "70,228",
+        "rank": "94",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Paterna",
+        "growth_from_2000_to_2013": "2.9%",
+        "latitude": 39.503555,
+        "longitude": -0.440894,
+        "population": "69,634",
+        "rank": "95",
+        "state": "Valencia"
+    },
+    {
+        "city": "Santa Lucía de Tirajana",
+        "growth_from_2000_to_2013": "4.1%",
+        "latitude": 27.908934,
+        "longitude": -15.445935,
+        "population": "69,560",
+        "rank": "96",
+        "state": "Canarias"
+    },
+    {
+        "city": "Puerto Real",
+        "growth_from_2000_to_2013": "2.6%",
+        "latitude": 36.531667,
+        "longitude": -6.190278,
+        "population": "41,499",
+        "rank": "97",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Marín",
+        "growth_from_2000_to_2013": "1.2%",
+        "latitude": 42.383448,
+        "longitude": -8.700793,
+        "population": "24,261",
+        "rank": "98",
+        "state": "Galicia"
+    },
+    {
+        "city": "Rivas-Vaciamadrid",
+        "growth_from_2000_to_2013": "4.5%",
+        "latitude": 40.326374,
+        "longitude": -3.528308,
+        "population": "89,455",
+        "rank": "99",
+        "state": "Madrid"
+    },
+    {
+        "city": "Orihuela",
+        "growth_from_2000_to_2013": "3.2%",
+        "latitude": 38.085210,
+        "longitude": -0.946159,
+        "population": "78,940",
+        "rank": "100",
+        "state": "Valencia"
+    },
+    {
+        "city": "Rivas-Vaciamadrid",
+        "growth_from_2000_to_2013": "4.5%",
+        "latitude": 40.326374,
+        "longitude": -3.528308,
+        "population": "89,455",
+        "rank": "91",
+        "state": "Madrid"
+    },
+    {
+        "city": "Orihuela",
+        "growth_from_2000_to_2013": "3.2%",
+        "latitude": 38.085210,
+        "longitude": -0.946159,
+        "population": "78,940",
+        "rank": "92",
+        "state": "Valencia"
+    },
+    {
+        "city": "Estepona",
+        "growth_from_2000_to_2013": "3.7%",
+        "latitude": 36.427063,
+        "longitude": -5.145324,
+        "population": "70,228",
+        "rank": "93",
+        "state": "Andalucía"
+    },
+    {
+        "city": "Paterna",
+        "growth_from_2000_to_2013": "2.9%",
+        "latitude": 39.503555,
+        "longitude": -0.440894,
+        "population": "69,634",
+        "rank": "94",
+        "state": "Valencia"
+    },
+    {
+        "city": "Santa Lucía de Tirajana",
+        "growth_from_2000_to_2013": "4.1%",
+        "latitude": 27.908934,
+        "longitude": -15.445935,
+        "population": "69,560",
+        "rank": "95",
+        "state": "Canarias"
+    },
+    {
+        "city": "Viladecans",
+        "growth_from_2000_to_2013": "3.4%",
+        "latitude": 41.317991,
+        "longitude": 2.014071,
+        "population": "66,707",
+        "rank": "96",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Granollers",
+        "growth_from_2000_to_2013": "1.7%",
+        "latitude": 41.607981,
+        "longitude": 2.287658,
+        "population": "61,275",
+        "rank": "97",
+        "state": "Cataluña"
+    },
+    {
+        "city": "Cáceres",
+        "growth_from_2000_to_2013": "1.6%",
+        "latitude": 39.476489,
+        "longitude": -6.372241,
+        "population": "95,800",
+        "rank": "98",
+        "state": "Extremadura"
+    },
+    {
+        "city": "Melilla",
+        "growth_from_2000_to_2013": "3.0%",
+        "latitude": 35.292278,
+        "longitude": -2.938097,
+        "population": "86,120",
+        "rank": "99",
+        "state": "Melilla"
+    },
+    {
+        "city": "Torrelavega",
+        "growth_from_2000_to_2013": "1.2%",
+        "latitude": 43.349867,
+        "longitude": -4.047123,
+        "population": "51,129",
+        "rank": "100",
+        "state": "Cantabria"
+    }    
+]

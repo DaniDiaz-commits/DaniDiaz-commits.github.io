@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ciudades o estados</title>
+    <style>
+        * {
+            user-select: none;
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        body {
+            display: flex;
+            justify-content: center;
+            background: linear-gradient(90deg, #041e42 20%, #9b1c2c 100%);
+        }
+        form {
+            min-width: 500px;
+            max-width: 500px;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+        .search {
+            font-family: 'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+            font-size: 20px;
+            padding: 20px;
+            border: 6px solid gray;
+            margin-top: 20px;
+        }
+        .suggestions {
+            min-width: 350px;
+            max-width: 350px;
+            margin: auto;
+            /* list-style: none; */
+        }
+        .suggestions li {
+            background-color: rgb(207, 203, 203);
+            padding: 20px 10px;
+            border: 1px solid rgb(168, 154, 154);
+            box-shadow: rgba(0, 0, 0, 0.45) 0px 25px 20px -20px;
+            display: flex;
+            justify-content: space-between; 
+            align-items: center; 
+            position: relative;
+        }
+        li:hover {
+            scale: 1.2;
+            background: white;
+            transform: skewY(-2deg);
+        }
+        .search:focus {
+            outline: none;
+        }
+        
+        .hl {
+            background-color: orange;
+        }
+    </style>
+</head>
+<body>
+    <form action="" id="search-form">
+        <input type="text" class="search" placeholder="City or state">
+        <ul class="suggestions"></ul>
+    </form>
+
+    <script>
+        const endpoint = 'https://gist.githubusercontent.com/Miserlou/c5cd8364bf9b2420bb29/raw/2bf258763cdddd704f8ffd3ea9a3e81d25e2c6f6/cities.json';
+        // const endpoint = 'ciudades.json';
+
+        const cities = [];
+
+        fetch(endpoint)
+        .then(blob => blob.json())
+        .then(data => cities.push(...data))
+
+        function findMathches(wordToMatch, cities){
+            return cities.filter(place => {
+                const regex = new RegExp(wordToMatch, 'gi');
+                return place.city.match(regex) || place.state.match(regex)
+            })
+        }
+        function displayMatches(e) {
+            const matchArray = findMathches(this.value, cities);
+            const html = matchArray.map(place => {
+                const regex = new RegExp(this.value, 'gi');
+                const cityName = place.city.replace(regex, `<span class="hl">${this.value}</span>`);
+                const stateName = place.state.replace(regex, `<span class="hl">${this.value}</span>`);
+                return `
+                <li>
+                    <span class="name">${cityName}, ${stateName}</span>
+                    <span class="name">${numberWithCommas(place.population)}</span>
+                </li>`;
+            }).join('');
+            suggestions.innerHTML = html;
+        };
+
+        function numberWithCommas(x){
+            return x.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ',');
+        }
+
+        const searchInput = document.querySelector(".search");
+        const suggestions = document.querySelector(".suggestions");
+
+        searchInput.addEventListener('change', displayMatches);
+        searchInput.addEventListener('keyup', displayMatches);
+    </script>
+</body>
+</html>

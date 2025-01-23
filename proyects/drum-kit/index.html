@@ -76,6 +76,29 @@
             const key = document.querySelector(`.key[data-key='${e.keyCode}']`)
             key.classList.remove('playing');
         })
+
+        // window.addEventListener("dblclick", (e) => {
+        //     window.removeEventListener('keydown');
+
+        //     window.addEventListener('keydown', autoplay);
+        //     if(!code || isNaN(code)) return;
+
+        //     const key = document.querySelector(`.key[data-key='${code}']`)
+            
+        // })
+
+        // function autoplay(e) {
+        //     const audio = document.querySelector(`audio[data-key="${e.keyCode}"]`);
+        //     const key = document.querySelector(`.key[data-key='${e.keyCode}']`)
+        //     if(!audio) return;
+        //     audio.currentTime = 0;
+
+        //     if(e.keyCode == 27){ return };
+        //     audio.play();
+        
+        //     key.classList.add('playing');
+        // }
+
         // function removeTransition (e) {
         //     if(e.propertyName !== 'transform') return;
             
