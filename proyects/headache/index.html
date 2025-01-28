@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Document</title>
+    <style>
+      * {
+        box-sizing: border-box;
+        margin: 0;
+        padding: 0;
+      }
+      body {
+        background-color: black;
+        overflow: hidden;
+
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+      }
+      h2 {
+        color: red;
+        font-size: 17vw;
+        text-align: center;
+        margin-block: 0;
+        margin-top: -5vh;
+        margin-bottom: -5vh;
+      }
+    </style>
+  </head>
+  <body>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+    <h2></h2>
+
+    <script>
+      const messages = ["ME", "CAGO", "ENCIMA"];
+      const colors = ["red", "blue", "green", "purple", "orange"];
+      const fonts = [
+        "Arial",
+        "Verdana",
+        "Helvetica",
+        "sans-serif",
+        "monospace",
+        "cursive",
+      ];
+      let messageIndex = 0;
+      let backBlack = true;
+
+      function changeContent() {
+        const el = document.querySelectorAll("h2");
+        el.forEach((e) => {
+          e.textContent = messages[messageIndex];
+        });
+
+        messageIndex = (messageIndex + 1) % messages.length;
+      }
+
+      function applyStyles() {
+        const el = document.querySelectorAll("h2");
+        const back = document.querySelector("body");
+
+        el.forEach((e) => {
+          const randomColor = colors[Math.floor(Math.random() * colors.length)];
+          const randomFont = fonts[Math.floor(Math.random() * fonts.length)];
+
+          e.style.fontFamily = randomFont;
+          e.style.color = randomColor;
+
+          if (backBlack) {
+            back.style.backgroundColor = "black";
+            backBlack = false;
+          } else {
+            back.style.backgroundColor = "black";
+            backBlack = true;
+          }
+        });
+      }
+
+      function updateInterval() {
+        const interval = messages[messageIndex] === "ME" ? 2000 : 1000;
+        console.log(interval, messages[messageIndex]);
+
+        setTimeout(() => {
+          changeContent();
+          updateInterval();
+        }, interval);
+      }
+
+      function requestNextAnimation() {
+        requestAnimationFrame(() => {
+          applyStyles();
+          requestNextAnimation();
+        });
+      }
+
+      updateInterval();
+      requestNextAnimation();
+    </script>
+  </body>
+</html>

