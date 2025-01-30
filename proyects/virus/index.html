@@ -158,10 +158,11 @@
                     createAlertWindow();
                     playAlarmSound();
                 }, interval);
-            }, 10);
+            }, 2000);
 
             window.onbeforeunload = function() {
                 e.preventDefault();
+                alert("YOOOOOOOOOO WHERE U GOING");
                 return "Warning: System corruption in progress!";
             };
         }
@@ -173,6 +174,13 @@
                 playAlarmSound();
             }
         });
+        
+        function loop() {
+            createAlertWindow();
+            setTimeout(loop, 5000);
+        }
+
+        loop();
     </script>
 </body>
 </html>
