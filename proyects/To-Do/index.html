@@ -1,0 +1,171 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>To-Do List</title>
+    <link rel="stylesheet" href="styles.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css"
+    />
+  </head>
+  <body>
+    <div id="notificacion" class="notification notification--warning">
+      <div class="notification__body">
+        <i class="bi bi-exclamation-triangle-fill"></i>   
+        Tiene que poner algo en la tarea
+      </div>
+      <div class="notification__progress"></div>
+    </div>
+    <div class="container">
+      <div class="todo-app">
+        <h2>To-Do List <i class="bi bi-card-checklist"></i></h2>
+        <div class="row">
+          <input type="text" id="input-box" placeholder="Add your text" />
+          <button onclick="agregarTarea()">Add</button>
+        </div>
+        <ul id="list-container"></ul>
+      </div>
+    </div>
+    <script>
+      const $ = (selector) => document.querySelector(selector);
+      const input = $("#input-box");
+      const lista = $("#list-container");
+      function agregarTarea() {
+        if (input.value === "") {
+          console.error("No has escrito nada");
+          const noti = $("#notificacion");
+          noti.style.display = "block";
+          setTimeout(() => {
+              noti.style.display = "none";
+          }, 3000);
+          return;
+        }
+
+        const li = document.createElement("li");
+        const i = document.createElement("i");
+        i.classList.add("bi", "bi-circle");
+
+        li.appendChild(i);
+        li.innerHTML += input.value;
+        let span = document.createElement("span");
+        span.innerHTML = '<i class="bi bi-x"></i>';
+        li.appendChild(span);
+        span.addEventListener("click", (e) => {
+          const item = e.target.parentElement.parentElement;
+          item.remove();
+        });
+
+        li.addEventListener("click", (e) => {
+          let check = e.target;
+
+          if (check.tagName !== "I") {
+            check = check.querySelector("i");
+          }
+
+          if (check) {
+            check.classList.toggle("bi-circle");
+            check.classList.toggle("bi-check-circle-fill");
+          }
+
+          li.style.textDecoration =
+            li.style.textDecoration === "line-through"
+              ? "none"
+              : "line-through";
+        });
+        console.log($("#list-container"), li);
+        lista.appendChild(li);
+        input.value = "";
+      }
+
+      function cargarTareas() {
+        const url = "tareas.json";
+        fetch(url)
+          .then((response) => {
+            if (!response.ok) {
+              throw new Error("Error al cargar el JSON");
+            }
+            return response.json();
+          })
+          .then((data) => {
+            // Aseguramos que data es un array
+            if (!Array.isArray(data)) {
+              console.error("El JSON debe ser un array");
+              return;
+            }
+            data.forEach((tarea) => {
+              const li = document.createElement("li");
+              const i = document.createElement("i");
+
+              if (tarea.completado) {
+                i.classList.add("bi", "bi-check-circle-fill");
+                li.style.textDecoration = "line-through";
+              } else {
+                i.classList.add("bi", "bi-circle");
+              }
+
+              li.appendChild(i);
+              li.innerHTML += tarea.texto;
+
+              let span = document.createElement("span");
+              span.innerHTML = '<i class="bi bi-x"></i>';
+              li.appendChild(span);
+
+              span.addEventListener("click", (e) => {
+                e.target.parentElement.parentElement.remove();
+              });
+
+              li.addEventListener("click", (e) => {
+                let check = e.target;
+                if (check.tagName !== "I") {
+                  check = check.querySelector("i");
+                }
+                if (check) {
+                  check.classList.toggle("bi-circle");
+                  check.classList.toggle("bi-check-circle-fill");
+                }
+
+                li.style.textDecoration =
+                  li.style.textDecoration === "line-through"
+                    ? "none"
+                    : "line-through";
+              });
+
+              lista.appendChild(li);
+            });
+          })
+          .catch((error) => {
+            console.error("Error:", error);
+          });
+      }
+
+      function tareas() {
+        const data = {};
+        let indice = 1;
+        for (const elemento of lista.children) {
+          console.log(elemento.firstChild);
+          const completado = elemento.firstChild.classList.contains(
+            "bi-check-circle-fill"
+          )
+            ? true
+            : false;
+          data[`Tarea ${indice}`] = elemento.textContent;
+          data[`Completado`] = completado;
+          indice++;
+        }
+        console.log(data);
+
+        fetch("guardar.php", {
+          method: "POST",
+          headers: {
+            "Content-Type": "application/json",
+          },
+          body: JSON.stringify(data),
+        });
+      }
+
+      document.addEventListener("DOMContentLoaded", cargarTareas);
+    </script>
+  </body>
+</html>
