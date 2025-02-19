@@ -19,6 +19,11 @@ body {
     font-size: 16px;
     font-family: 'Poppins', sans-serif;
 }
+html, body {
+    overflow-x: hidden; /* Evita desplazamiento horizontal */
+    overflow-y: auto;   /* Ajusta el desplazamiento vertical sin reservar espacio extra */
+}
+
 *{
     user-select: none; /* No se cual es su punto negativo */
     margin: 0;
@@ -650,7 +655,9 @@ h3.my-profession {
     }
 }
 @media (max-width:767px) {
-
+    /* html {
+        overflow-y: hidden;
+    } */
     .contact .contact-form .col-6,
     .contact .contact-info-item,
     .portfolio .portfolio-item,
