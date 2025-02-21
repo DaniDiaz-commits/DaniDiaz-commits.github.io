@@ -107,7 +107,7 @@ const letterEvent = event => {
     if(newLetter.match(/^[a-zñ]$/i) && !usedLetters.includes(newLetter)) {
         letterInput(newLetter);
     } else {
-        console.log("Letra ya añadida: " +newLetter);
+        console.log("Letra ya añadida: " + newLetter);
         window.addEventListener('keydown', playSound(newLetter));
     }
 }
@@ -128,9 +128,10 @@ const drawWord = () => {
 const selectRandomWord = async () => {
     try {
         const response = await fetch(url);
+        console.log(response.status)
         const data = await response.json();
         const palabra = data[0];
-        console.log("Palabra: " +palabra);
+        console.log("Palabra: " + palabra);
 
         // translateText(palabra);
         
@@ -160,6 +161,7 @@ const startGame = async () => {
     usedLettersElement.innerHTML = '';
     startBtn.style.display = 'none';
     drawHangMan();
+    console.log("Juego comenzado");
     await selectRandomWord();
     drawWord();
     // setTimeout(drawWord, 1000); // Muy forzado para que es el fetch?

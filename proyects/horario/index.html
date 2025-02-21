@@ -335,6 +335,9 @@
             let hora = whatHour();
             if (hora == false) return;
             let tds = document.querySelectorAll(".hora");
+            for (let elemento of tds) {
+                elemento.classList.remove("highlight");
+            }
             let celda = tds[hora];
             if (hora >= 0 && hora <= 6) celda.classList.add("highlight");
         }
@@ -417,6 +420,7 @@
             timeUpdate();
         });
     </script>
+
     <!-- PARA EL BOTON DEL MODO OSCURO -->
     <script>
         let oscuro = true;
